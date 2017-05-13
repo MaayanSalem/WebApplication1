@@ -20,6 +20,13 @@ namespace WebApplication1.Controllers
         // GET: api/Users
         public IQueryable<User> GetUsers()
         {
+            User daniel = new User();
+            daniel.Age = 26;
+            daniel.City = "haifa";
+
+            db.Users.Add(daniel);
+            db.SaveChanges();
+
             return db.Users;
         }
 
